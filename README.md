@@ -4,6 +4,9 @@ A simple **React UI project** that showcases **camera buyer segmentation** using
 
 This project is built to practice **React components, Tailwind CSS, and responsive UI design**.
 
+# 🌐 Live Demo
+https://camera-segmentation-ui.vercel.app/
+
 ## ✨ Features
 - Camera buyer segmentation cards  
 - Horizontal scroll image slider  
