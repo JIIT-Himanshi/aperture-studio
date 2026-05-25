@@ -1,31 +1,50 @@
-# 📷 Camera Segmentation UI
+# APERTURE
 
-A simple **React UI project** that showcases **camera buyer segmentation** using a clean layout and horizontal image slider.
+APERTURE is a cinematic frontend experience inspired by editorial photography, modern visual storytelling, and premium minimal interfaces.
 
-This project is built to practice **React components, Tailwind CSS, and responsive UI design**.
+Built with React and Tailwind CSS, the project focuses on refined UI design, smooth interactions, dark/light themes, and immersive visual presentation.
 
-# 🌐 Live Demo
-https://camera-segmentation-ui.vercel.app/
+## Current Progress
 
-## ✨ Features
-- Camera buyer segmentation cards  
-- Horizontal scroll image slider  
-- Clean landing page UI  
-- Reusable React components  
+Phase 1 includes:
 
-## 🛠️ Tech Stack
-- React  
-- Tailwind CSS  
-- Lucide React Icons  
+* cinematic dark/light theme system
+* refined typography hierarchy
+* editorial-inspired layout
+* smooth card interactions and transitions
+* glassmorphism-style navigation
+* custom color system
+* responsive UI structure
 
-## 📌 Purpose
-This is a **frontend UI practice project** created to improve:
-- Component-based design
-- Tailwind styling
-- Responsive layouts
+## Tech Stack
 
-No backend or real data is used.
+* React.js
+* Tailwind CSS
+* Framer Motion
+* Lucide React
 
----
+## Design Direction
 
-Made with ❤️ by **Himanshi**
+The interface is influenced by:
+
+* editorial layouts
+* cinematic photography
+* luxury minimal interfaces
+* modern immersive frontend experiences
+
+## Upcoming Features
+
+* cinematic hero section
+* scroll-based animations
+* immersive gallery experience
+* advanced motion interactions
+* custom cursor system
+* optional 3D visual section
+
+## Live Demo
+
+https://aperture-studio.vercel.app
+
+## Author
+
+Himanshi Chauhan
