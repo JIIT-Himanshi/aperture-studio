@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Section1 from './components/Section1/Section1.jsx'
 import Section2 from './components/Section2/Section2.jsx'
+import CinematicLoader from './components/Loader/CinematicLoader'
+import HeroReveal from './components/Hero/HeroReveal'
 
 const App = () => {
   const [theme, setTheme] = useState('dark')
+  const [introComplete, setIntroComplete] = useState(false)
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme
@@ -47,9 +50,22 @@ const App = () => {
       }
     ]
   return (
-      <div>
-        <Section1 users={users} theme={theme} onToggleTheme={() => setTheme((currentTheme) => currentTheme === 'dark' ? 'light' : 'dark')} />
-        <Section2 theme={theme} />
+    <div>
+      {!introComplete && (
+        <CinematicLoader theme={theme} onComplete={() => setIntroComplete(true)} />
+      )}
+
+      {introComplete && (
+        <HeroReveal
+          theme={theme}
+          cameraSrc={'/camera-hero.png'}
+          introComplete={introComplete}
+          onToggleTheme={() => setTheme((currentTheme) => currentTheme === 'dark' ? 'light' : 'dark')}
+        />
+      )}
+
+      <Section1 users={users} theme={theme} introComplete={introComplete} onToggleTheme={() => setTheme((currentTheme) => currentTheme === 'dark' ? 'light' : 'dark')} />
+      <Section2 theme={theme} />
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 import { MoonStar, SunMedium, X } from 'lucide-react'
 
 const Navbar = (props) => {
@@ -8,7 +9,12 @@ const Navbar = (props) => {
     <div className='px-4 pt-4 md:px-8 lg:px-10'>
       {/* Desktop / Tablet navbar (keeps original layout unchanged for md and up) */}
       <div className='hidden md:block'>
-        <div className='mx-auto flex w-full max-w-360 items-center justify-between rounded-full border border-(--border-soft) bg-(--surface)/40 px-5 py-3 backdrop-blur-xl md:px-6 lg:px-8'>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={props.introComplete ? { opacity: 1, y: 0 } : { opacity: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className='mx-auto flex w-full max-w-384 items-center justify-between rounded-full border border-(--border-soft) bg-(--surface)/40 px-5 py-3 backdrop-blur-xl md:px-6 lg:px-8'
+        >
           <div className='flex items-center gap-3'>
             <span className='hidden h-6 w-6 rounded-full border border-(--border-soft) bg-(--text-primary)/5 md:block' />
             <h4 className='font-display text-[0.68rem] font-bold uppercase tracking-[0.38em] text-(--text-primary) md:text-[0.74rem]'>APERTURE</h4>
@@ -27,7 +33,7 @@ const Navbar = (props) => {
           >
             {isDark ? <SunMedium size={18} strokeWidth={1.75} /> : <MoonStar size={15} strokeWidth={1.75} />}
           </button>
-        </div>
+        </motion.div>
       </div>
 
       {/* Mobile navbar (only visible below md) */}
