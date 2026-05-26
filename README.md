@@ -43,7 +43,7 @@ The interface is influenced by:
 
 ## Live Demo
 
-https://camera-segmentation-ui.vercel.app/
+https://aperture-visuals.vercel.app/
 
 ## Author
 
