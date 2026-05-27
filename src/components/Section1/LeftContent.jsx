@@ -11,7 +11,7 @@ function LeftContent() {
                     <p className='mt-2 text-[0.82rem] leading-6 text-(--text-secondary) sm:text-[0.86rem]'>Every camera finds<br/>its person eventually.</p>
                 </div>
 
-                <button className='aperture-cta mx-auto mt-6 inline-flex w-full max-w-60 items-center justify-center rounded-full border px-4 py-3 font-body text-[0.6rem] font-medium uppercase tracking-[0.22em] transition-all duration-500 ease-out sm:mt-8 sm:w-auto sm:max-w-none sm:px-5 sm:py-3 sm:text-[0.62rem] md:mt-16 md:text-[0.64rem] lg:mt-33'>
+                <button className='aperture-cta mx-auto mt-5 inline-flex w-full max-w-38 items-center justify-center rounded-full border px-3 py-2.5 font-body text-[0.54rem] font-medium uppercase tracking-[0.2em] transition-all duration-500 ease-out sm:mt-8 sm:w-auto sm:max-w-none sm:px-5 sm:py-3 sm:text-[0.62rem] md:mt-16 md:text-[0.64rem] lg:mt-33'>
                     Explore Archive
                 </button>
             </div>
