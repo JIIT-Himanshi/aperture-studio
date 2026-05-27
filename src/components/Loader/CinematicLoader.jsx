@@ -55,7 +55,7 @@ export default function CinematicLoader({ theme = 'dark', onComplete, cameraSrc 
         className={`fixed inset-0 z-50 flex items-center justify-center cinematic-loader bg-black`}
         aria-hidden='true'
       >
-        <div className='relative flex flex-col items-center gap-6'>
+        <div className='relative flex flex-col items-center gap-5 px-4 sm:gap-6'>
           <div className='relative'>
             <motion.img
               src={CAMERA_SRC}
@@ -72,7 +72,7 @@ export default function CinematicLoader({ theme = 'dark', onComplete, cameraSrc 
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
               className='absolute left-0 top-0 -translate-x-[-30%] -translate-y-full text-left'
             >
-              <div className='font-display text-[clamp(1.35rem,3.3vw,2.2rem)] font-semibold tracking-tight text-(--text-primary)'>
+              <div className='font-display text-[clamp(1.1rem,4.2vw,2.2rem)] font-semibold tracking-tight text-(--text-primary) sm:text-[clamp(1.35rem,3.3vw,2.2rem)]'>
                 {percent}
               </div>
             </motion.div>
@@ -80,7 +80,7 @@ export default function CinematicLoader({ theme = 'dark', onComplete, cameraSrc 
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.22 }}
-              className='absolute left-full top-full -translate-x-[calc(100%+8px)] mt-2 text-right text-(--text-secondary) font-mono text-[0.66rem] uppercase tracking-[0.18em] opacity-75 pointer-events-none whitespace-nowrap'
+              className='absolute left-full top-full -translate-x-[calc(100%+8px)] mt-2 text-right text-(--text-secondary) font-mono text-[0.58rem] uppercase tracking-[0.16em] opacity-75 pointer-events-none whitespace-nowrap sm:text-[0.66rem] sm:tracking-[0.18em]'
             >
               <LoadingDots text='Loading APERTURE' />
             </motion.div>

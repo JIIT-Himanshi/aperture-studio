@@ -179,14 +179,14 @@ const RightContent = (props) => {
   return (
     <div
       id='right'
-      className='flex h-full w-full overflow-hidden bg-transparent px-1 pb-2 pt-1 lg:w-[78%] lg:pl-2 lg:pr-0'
+      className='flex h-full w-full overflow-hidden bg-transparent px-0 pb-2 pt-0 sm:px-1 sm:pt-1 lg:w-[78%] lg:pl-2 lg:pr-0'
     >
       <div
         ref={scrollRef}
         className={`archive-marquee-scroll flex h-full w-full overflow-x-auto overflow-y-hidden touch-pan-x ${isInteracting ? 'is-paused' : ''} ${isFinePointer ? 'archive-hide-cursor' : ''}`}
         style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', touchAction: 'pan-x' }}
       >
-        <div className='archive-marquee-track flex h-full w-fit gap-6 will-change-transform'>
+        <div className='archive-marquee-track flex h-full w-fit gap-4 sm:gap-6 will-change-transform'>
           {cards.map(function(elem, index) {
             return <RightCard key={`${index}-${elem.tag}`} index={(index % props.users.length) + 1} img={elem.img} tag={elem.tag} intro={elem.intro} />
           })}

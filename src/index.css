@@ -318,6 +318,25 @@ nav {
 }
 
 @media (max-width: 767px) {
+  .cinematic-loader-camera {
+    width: min(220px, 62vw);
+  }
+
+  .cinematic-camera {
+    width: min(280px, 80vw);
+  }
+
+  .radial-glow {
+    width: min(420px, 92vw);
+    height: min(240px, 28vh);
+    filter: blur(30px);
+  }
+
+  .loader-note {
+    font-size: 0.58rem;
+    letter-spacing: 0.28em;
+  }
+
   .archive-marquee-track {
     animation-duration: 38s;
   }

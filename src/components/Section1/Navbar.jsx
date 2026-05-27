@@ -50,17 +50,17 @@ function MobileMenu({ onToggleTheme, isDark }) {
 
   return (
     <>
-      <div className='fixed left-4 right-4 top-4 z-50 mx-auto flex max-w-245 items-center justify-between rounded-full border border-(--border-soft) bg-(--surface)/55 px-4 py-2 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,0,0,0.22)]'>
-        <div className='flex items-center gap-3'>
-          <span className='h-6 w-6 rounded-full border border-(--border-soft) bg-(--text-primary)/5' />
-          <h4 className='font-display text-[0.72rem] font-bold uppercase tracking-[0.32em] text-(--text-primary)'>APERTURE</h4>
+      <div className='fixed left-3 right-3 top-3 z-50 mx-auto flex max-w-245 items-center justify-between rounded-full border border-(--border-soft) bg-(--surface)/60 px-3 py-2 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,0,0,0.22)]'>
+        <div className='flex items-center gap-2'>
+          <span className='h-5 w-5 rounded-full border border-(--border-soft) bg-(--text-primary)/5' />
+          <h4 className='font-display text-[0.64rem] font-bold uppercase tracking-[0.28em] text-(--text-primary)'>APERTURE</h4>
         </div>
         <div className='flex items-center gap-2'>
           <button
             type='button'
             onClick={onToggleTheme}
             aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
-            className='h-10 w-10 flex items-center justify-center rounded-full border border-(--border-soft) bg-black/10 text-(--text-primary) transition duration-300 ease-out'
+            className='flex h-9 w-9 items-center justify-center rounded-full border border-(--border-soft) bg-black/10 text-(--text-primary) transition duration-300 ease-out'
           >
             {isDark ? <SunMedium size={16} strokeWidth={1.6} /> : <MoonStar size={16} strokeWidth={1.6} />}
           </button>
@@ -68,7 +68,7 @@ function MobileMenu({ onToggleTheme, isDark }) {
           <button
             type='button'
             aria-label='Open menu'
-            className='h-10 w-10 flex items-center justify-center rounded-full border border-(--border-soft) bg-black/10 text-(--text-primary)'
+            className='flex h-9 w-9 items-center justify-center rounded-full border border-(--border-soft) bg-black/10 text-(--text-primary)'
             onClick={() => setOpen(true)}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
@@ -79,15 +79,15 @@ function MobileMenu({ onToggleTheme, isDark }) {
       {open && (
         <div className='fixed inset-0 z-40 flex items-center justify-center'>
           <div className='absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-400' onClick={() => setOpen(false)} />
-          <div className='relative z-50 mx-6 w-[calc(100%-48px)] max-w-md transform-gpu rounded-2xl bg-(--surface)/70 p-8 shadow-2xl transition-transform duration-400 ease-out translate-y-2'>
+          <div className='relative z-50 mx-4 w-[calc(100%-32px)] max-w-md transform-gpu rounded-2xl bg-(--surface)/75 p-6 shadow-2xl transition-transform duration-400 ease-out translate-y-2'>
             <button className='absolute right-4 top-4 rounded-full p-2 text-(--text-primary)' onClick={() => setOpen(false)} aria-label='Close menu'>
               <X size={18} />
             </button>
-            <nav className='flex flex-col items-center gap-6 text-center'>
-              <a className='uppercase tracking-[0.28em] text-[0.95rem] text-(--text-primary) transition-transform duration-300' href='#about' onClick={() => setOpen(false)}>About</a>
-              <a className='uppercase tracking-[0.28em] text-[0.95rem] text-(--text-primary)' href='#gallery' onClick={() => setOpen(false)}>Gallery</a>
-              <a className='uppercase tracking-[0.28em] text-[0.95rem] text-(--text-primary)' href='#archive' onClick={() => setOpen(false)}>Archive</a>
-              <a className='uppercase tracking-[0.28em] text-[0.95rem] text-(--text-primary)' href='#journal' onClick={() => setOpen(false)}>Journal</a>
+            <nav className='flex flex-col items-center gap-5 text-center'>
+              <a className='uppercase tracking-[0.24em] text-[0.88rem] text-(--text-primary) transition-transform duration-300' href='#about' onClick={() => setOpen(false)}>About</a>
+              <a className='uppercase tracking-[0.24em] text-[0.88rem] text-(--text-primary)' href='#gallery' onClick={() => setOpen(false)}>Gallery</a>
+              <a className='uppercase tracking-[0.24em] text-[0.88rem] text-(--text-primary)' href='#archive' onClick={() => setOpen(false)}>Archive</a>
+              <a className='uppercase tracking-[0.24em] text-[0.88rem] text-(--text-primary)' href='#journal' onClick={() => setOpen(false)}>Journal</a>
             </nav>
           </div>
         </div>

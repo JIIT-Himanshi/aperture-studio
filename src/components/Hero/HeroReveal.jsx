@@ -14,24 +14,24 @@ export default function HeroReveal({ theme = 'dark', cameraSrc = '/camera-hero.p
         </div>
       </motion.div>
 
-      <div className='mx-auto flex w-full max-w-360 flex-col items-center justify-center gap-8 px-4 pt-20 pb-12 sm:px-6 md:gap-6 md:pt-16 lg:pt-20'>
+      <div className='mx-auto flex w-full max-w-360 flex-col items-center justify-center gap-7 px-3 pt-18 pb-10 sm:px-5 sm:pt-20 md:gap-6 md:px-8 md:pt-16 lg:pt-20'>
         {/* spacer to avoid content being covered by fixed navbar */}
-        <div className='h-10 md:h-4' aria-hidden='true' />
+        <div className='h-8 md:h-4' aria-hidden='true' />
         {/* <motion.p initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: easing }} className='font-mono text-[0.62rem] uppercase tracking-[0.42em] text-(--accent-gold)'>APERTURE — VISUAL ARCHIVE</motion.p> */}
 
-        <motion.h1 initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1, ease: easing }} className='font-display text-[clamp(2rem,6.4vw,4.6rem)] leading-tight text-center font-semibold text-(--text-primary)'>
+        <motion.h1 initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1, ease: easing }} className='font-display text-[clamp(2.05rem,10vw,4.6rem)] leading-[0.95] text-center font-semibold text-(--text-primary) sm:text-[clamp(2.2rem,7vw,4.6rem)]'>
           <span className='block'>Frames shaped</span>
           <span className='block'>by light.</span>
         </motion.h1>
 
-        <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: easing, delay: 0.12 }} className='max-w-[60ch] text-center text-(--text-secondary)'>A quiet collection of frames and atmospheres — minimal, editorial, calm.</motion.p>
+        <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: easing, delay: 0.12 }} className='max-w-[32ch] text-center text-[0.92rem] leading-7 text-(--text-secondary) sm:max-w-[60ch] sm:text-base'>A quiet collection of frames and atmospheres — minimal, editorial, calm.</motion.p>
 
-        <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2, ease: easing, delay: 0.22 }} className='relative mb-10 flex items-center justify-center md:mb-14 lg:mb-16'>
+        <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2, ease: easing, delay: 0.22 }} className='relative mb-8 flex items-center justify-center md:mb-14 lg:mb-16'>
           <div className='radial-glow' />
           <motion.img
             src={cameraSrc}
             alt='Hero camera'
-            className='cinematic-camera max-h-[48vh] w-auto'
+            className='cinematic-camera max-h-[28vh] w-auto sm:max-h-[38vh] md:max-h-[48vh]'
             style={{ zIndex: 2, transformOrigin: 'center center' }}
             initial={{ opacity: 0, scale: 0.38, filter: 'blur(14px)' }}
             animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
