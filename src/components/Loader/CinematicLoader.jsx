@@ -48,37 +48,43 @@ export default function CinematicLoader({ theme = 'dark', onComplete, cameraSrc 
     <AnimatePresence>
       <motion.div
         key='cinematic-loader'
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0, filter: 'blur(6px)', transition: { duration: 0.6 } }}
-        transition={{ duration: 0.45 }}
-        className={`fixed inset-0 z-50 flex items-center justify-center cinematic-loader`}
+        transition={{ duration: 0 }}
+        className={`fixed inset-0 z-50 flex items-center justify-center cinematic-loader bg-black`}
         aria-hidden='true'
       >
         <div className='relative flex flex-col items-center gap-6'>
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className='text-center'
-          >
-            <div className='text-[clamp(2.2rem,6.5vw,4rem)] font-display font-semibold tracking-tight text-(--text-primary)'>
-              {percent}
-            </div>
-          </motion.div>
+          <div className='relative'>
+            <motion.img
+              src={CAMERA_SRC}
+              alt='Cinematic camera'
+              className='cinematic-loader-camera pointer-events-none select-none'
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: [1, 1.015, 1.01] }}
+              transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+            />
 
-          <motion.img
-            src={CAMERA_SRC}
-            alt='Cinematic camera'
-            className='cinematic-camera pointer-events-none select-none'
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: [1, 1.015, 1.01] }}
-            transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-          />
-
-          <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.16,1,0.3,1], delay: 0.22 }} className='text-(--text-secondary) text-[0.86rem] font-body opacity-70'>
-            <LoadingDots text='Visual system loading' />
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              className='absolute left-0 top-0 -translate-x-[-30%] -translate-y-full text-left'
+            >
+              <div className='font-display text-[clamp(1.35rem,3.3vw,2.2rem)] font-semibold tracking-tight text-(--text-primary)'>
+                {percent}
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.22 }}
+              className='absolute left-full top-full -translate-x-[calc(100%+8px)] mt-2 text-right text-(--text-secondary) font-mono text-[0.66rem] uppercase tracking-[0.18em] opacity-75 pointer-events-none whitespace-nowrap'
+            >
+              <LoadingDots text='Loading APERTURE' />
+            </motion.div>
+          </div>
 
           <div className='absolute inset-0 pointer-events-none'>
             <div className='grain' />

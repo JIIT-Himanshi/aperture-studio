@@ -6,14 +6,15 @@ const Navbar = (props) => {
   const isDark = props.theme === 'dark'
 
   return (
-    <div className='px-4 pt-4 md:px-8 lg:px-10'>
+    <div className='px-4 pt-4 md:px-0 lg:px-0'>
       {/* Desktop / Tablet navbar (keeps original layout unchanged for md and up) */}
       <div className='hidden md:block'>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={props.introComplete ? { opacity: 1, y: 0 } : { opacity: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className='mx-auto flex w-full max-w-384 items-center justify-between rounded-full border border-(--border-soft) bg-(--surface)/40 px-5 py-3 backdrop-blur-xl md:px-6 lg:px-8'
+          className='mx-auto flex w-full items-center justify-between rounded-full border border-(--border-soft) bg-(--surface)/40 px-5 py-3 backdrop-blur-xl md:px-6 lg:px-8'
+          style={{ maxWidth: '120rem' }}
         >
           <div className='flex items-center gap-3'>
             <span className='hidden h-6 w-6 rounded-full border border-(--border-soft) bg-(--text-primary)/5 md:block' />
