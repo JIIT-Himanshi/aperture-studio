@@ -13,6 +13,7 @@
   --overlay-muted: #e6e6e6;
   --accent-gold: #c9a96e;
   --border-soft: rgba(255, 255, 255, 0.08);
+  --stats-divider: rgba(255, 255, 255, 0.06);
   --font-display: 'Syne', sans-serif;
   --font-serif: 'Cormorant Garamond', serif;
   --font-body: 'DM Sans', sans-serif;
@@ -30,6 +31,235 @@
   --overlay-muted: #e6e6e6;
   --accent-gold: #8c8375;
   --border-soft: rgba(17, 17, 17, 0.08);
+  --stats-divider: rgba(0, 0, 0, 0.07);
+}
+
+.section4 {
+  --section4-text: var(--text-primary);
+  --section4-muted: var(--text-secondary);
+  --section4-gold: var(--accent-gold);
+  --section4-front-bg: color-mix(in srgb, var(--text-primary) 4%, transparent);
+  --section4-front-border: var(--border-soft);
+  /* reduce gold intensity for back face to avoid overpowering light themes */
+  --section4-back-bg: color-mix(in srgb, var(--accent-gold) 4%, transparent);
+  --section4-back-border: color-mix(in srgb, var(--accent-gold) 12%, transparent);
+  --section4-hint: color-mix(in srgb, var(--text-primary) 20%, transparent);
+  height: 100vh;
+  min-height: 100vh;
+  /* reduced top padding to bring Section4 closer to Section3 */
+  padding: 0px 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* light-mode overrides removed: section derives from global theme variables now */
+
+.section4-quote {
+  width: 100%;
+  max-width: 580px;
+  /* tightened bottom margin */
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.section4-quote-line {
+  width: 40px;
+  height: 1px;
+  margin: 0 auto 16px;
+  background: var(--section4-gold);
+  transform-origin: left;
+}
+
+.section4-quote-label {
+  margin: 0 0 24px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--section4-gold);
+}
+
+.section4-quote-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section4-quote-text p {
+  margin: 0;
+  max-width: 580px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--section4-text);
+}
+
+.section4-quote-author {
+  margin: 16px 0 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--section4-muted);
+}
+
+.section4-cards {
+  display: flex;
+  width: 100%;
+  max-width: 860px;
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 auto;
+}
+
+.section4-card-outer {
+  width: 260px;
+  height: 200px;
+  position: relative;
+  perspective: 1000px;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+.section4-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section4-card-outer:hover .section4-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* also flip when `.is-flipped` is present (tap-to-flip) */
+.section4-card-outer.is-flipped .section4-card-inner {
+  transform: rotateY(180deg);
+}
+
+.section4-card-face {
+  position: absolute;
+  inset: 0;
+  padding: 36px 32px;
+  border-radius: 25px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+}
+
+.section4-card-front {
+  flex-direction: column;
+  justify-content: flex-end;
+  background: var(--section4-front-bg);
+  border: 1px solid var(--section4-front-border);
+}
+
+.section4-card-back {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: var(--section4-back-bg);
+  border: 1px solid var(--section4-back-border);
+  transform: rotateY(180deg);
+}
+
+.section4-gold-dash {
+  width: 28px;
+  height: 1px;
+  background: var(--section4-gold);
+}
+
+.section4-card-front-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.section4-gold-dash--front {
+  margin-bottom: auto;
+}
+
+.section4-gold-dash--back {
+  margin-bottom: 20px;
+}
+
+.section4-card-number--front {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--section4-text);
+}
+
+.section4-card-hint {
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--section4-hint);
+}
+
+.section4-card-back-number {
+  margin-bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--section4-gold);
+}
+
+.section4-card-back-label {
+  max-width: 180px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--section4-text);
+}
+
+@media (max-width: 639px) {
+  .section4 {
+    /* slightly reduced top padding on mobile */
+    padding: 28px 24px 40px;
+  }
+
+  .section4-quote {
+    margin-bottom: 36px;
+  }
+
+  .section4-quote-text p {
+    font-size: 26px;
+  }
+
+  .section4-cards {
+    gap: 12px;
+  }
+
+  .section4-card-outer {
+    width: calc((100% - 24px) / 3);
+    height: 160px;
+    min-width: 0;
+  }
+
+  .section4-card-face {
+    padding: 24px 18px;
+  }
+
+  .section4-card-number--front {
+    font-size: 42px;
+  }
+
+  .section4-card-back-label {
+    font-size: 13px;
+  }
 }
 
 #right::-webkit-scrollbar {
@@ -347,5 +577,76 @@ nav {
 
   .archive-custom-cursor {
     display: none;
+  }
+}
+
+/* Mobile stacking and layout for Section4 (below 768px) */
+@media (max-width: 768px) {
+  .section4-cards {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .section4-card-outer {
+    width: 100%;
+    height: 120px;
+    min-width: 0;
+  }
+
+  .section4-card-face {
+    padding: 24px 28px;
+    border-radius: 14px;
+  }
+
+  .section4-card-front {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .section4-card-front-left {
+    gap: 6px;
+  }
+
+  .section4-gold-dash {
+    width: 24px;
+    height: 1px;
+  }
+
+  .section4-card-number--front {
+    font-size: 48px;
+  }
+
+  .section4-card-hint {
+    align-self: center;
+    text-align: right;
+  }
+
+  .section4-card-back {
+    padding: 24px 28px;
+  }
+
+  .section4-quote-text p {
+    font-size: 24px;
+    line-height: 1.4;
+    max-width: 90%;
+  }
+
+  .section4-quote {
+    padding-top: 50px;
+    padding-bottom: 32px;
+    margin-bottom: 8px;
+  }
+
+  .section4-quote-author {
+    font-size: 12px;
+  }
+
+  .section4-quote-label {
+    font-size: 9px;
+  }
+
+  .section4-quote-line {
+    width: 32px;
   }
 }
